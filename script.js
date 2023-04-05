@@ -1,6 +1,8 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
+var hourNine = document.getElementById("hour-9");
+
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
@@ -21,3 +23,26 @@ $(function () {
   //
   // TODO: Add code to display the current date in the header of the page.
 });
+
+$(document).ready(function(){
+  setInterval('updateClock()', 1000);
+});
+
+function updateClock () {
+  var currentTime = new Date ();
+  var currentHours = currentTime.getHours();
+  var currentMinutes = currentTime.getMinutes();
+  var currentSeconds = currentTime.getSeconds();
+
+  currentMinutes = (currentMinutes < 10 ? "0" : "") + currentMinutes;
+  currentSeconds = (currentMinutes < 10 ? "0" : "") + currentSeconds;
+  
+  var timeOfDay = (currentHours < 12) ? "AM" : "PM";
+
+  currentHours = (currentHours > 12) ? currentHours -12 : currentHours;
+  currentHours = (currentHours == 0) ? 12 : currentHours;
+
+  var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
+
+  $("#currentDay").html(currentTimeString);
+}
