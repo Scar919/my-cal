@@ -2,6 +2,14 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 var hourNine = document.getElementById("hour-9");
+var hourTen = document.getElementById("hour-10");
+var hourEleven = document.getElementById("hour-11");
+var hourTwelve = document.getElementById("hour-12");
+var hourOne = document.getElementById("hour-1");
+var hourTwo = document.getElementById("hour-2");
+var hourThree = document.getElementById("hour-3");
+var hourFour = document.getElementById("hour-4");
+var houtFive = document.getElementById("hour-5");
 
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
@@ -24,25 +32,15 @@ $(function () {
   // TODO: Add code to display the current date in the header of the page.
 });
 
+
+
+function updateClock() {
+  var rightNow = dayjs().format('MMM DD, YYYY [at] hh:mm:ss a');
+  $("#currentDay").text(rightNow);
+}
+
 $(document).ready(function(){
   setInterval('updateClock()', 1000);
 });
 
-function updateClock () {
-  var currentTime = new Date ();
-  var currentHours = currentTime.getHours();
-  var currentMinutes = currentTime.getMinutes();
-  var currentSeconds = currentTime.getSeconds();
 
-  currentMinutes = (currentMinutes < 10 ? "0" : "") + currentMinutes;
-  currentSeconds = (currentMinutes < 10 ? "0" : "") + currentSeconds;
-  
-  var timeOfDay = (currentHours < 12) ? "AM" : "PM";
-
-  currentHours = (currentHours > 12) ? currentHours -12 : currentHours;
-  currentHours = (currentHours == 0) ? 12 : currentHours;
-
-  var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
-
-  $("#currentDay").html(currentTimeString);
-}
