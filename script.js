@@ -12,11 +12,12 @@ var $hours = $container.find('[id^="hour-"]');
   $("#10r").attr("data-time", "10");
   $("#11r").attr("data-time", "11");
   $("#12r").attr("data-time", "12");
-  $("#13r").attr("data-time", "13");
-  $("#14r").attr("data-time", "14");
-  $("#15r").attr("data-time", "15");
-  $("#16r").attr("data-time", "16");
-  $("#17r").attr("data-time", "17");
+  $("#1r").attr("data-time", "13");
+  $("#2r").attr("data-time", "14");
+  $("#3r").attr("data-time", "15");
+  $("#4r").attr("data-time", "16");
+  $("#5r").attr("data-time", "17");
+  
 
   function renderPlans() {
       for (var i = 9; i <= 17; i++) {
