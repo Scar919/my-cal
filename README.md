@@ -7,6 +7,7 @@ Description
 The motivation behind this project was to make an up to date cal for an employee. This cal includes a running clock and time slots from 9am-5pm that change color as the workday progresses. This cal is meant to help employees keep track of any upcoming meetings and overall makes it a one stop shop for all things such as meetings and to do's while providing the most updated day and time.
 
 ![screenshot](./assets/img.png)
+https://scar919.github.io/my-cal/
 
 ## Usage
 Creating this cal makes it easier for employees to keep track of all theit meetings and to-do's for the work day while also providing them the current day and time. Each section section provides a saved button to make sure all added notes atay saved.
